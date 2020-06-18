@@ -13,12 +13,19 @@ To run this project locally:
 2. Paste your API Token to `src/main/conf/jaicp.properties`
 2. Run either `PollingConnection.kt`, or `WebhookConnection.kt`. Using PollingConnection does not require exposed HTTP URL.
 
-#### Obtain global URL for WebhookConnection 
+#### Obtain global URL for WebhookConnection  
 
 You can then propagate your local instance to the Internet using [ngrok](https://ngrok.com/).
 And then run `ngrok http 8080` in the terminal to obtain public URL.
 
 Copy this URL then and set it in JAICP Web Interface 
+
+### Channels
+You can create channels in JAICP Web Interface. Select channels tab inside your project, create a new one, 
+let's say, Chat Widget, and then restart your connection (Webhook or Polling) to register changes in channels.
+From now on you will be able to communicate with your bot through widget.
+
+Same applies to Telegram, Dialogflow, Facebook, and other channels.
 
 ### Deploy to Heroku
 
@@ -27,10 +34,9 @@ Just click on the button below to deploy this template on Heroku server.
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 1. After deployment open the app and copy the URL of the app to clipboard.
-2. Then go to [Dialogflow](https://dialogflow.com), create a new agent and setup a fulfillment URL.
-3. Enable fulfillment for every intent in you agent.
-4. Click on _Google Assistant_ link on the left side bar to create a new Google Assistant Action connected to your Dialogflow agent.
-5. That's it! You now can start the app and see how you server responds with some responses.
+2. Then go to JAICP Web Interface, open your project settings, select webhook type of connection and paste your URL.
+3. Configure all channels you want to use and restart your application in Heroku.
+4. That's it! Now all the channels will communicate through your bot.
 
 
 ### How to upload code changes to Heroku

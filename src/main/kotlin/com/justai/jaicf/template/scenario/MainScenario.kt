@@ -2,12 +2,20 @@ package com.justai.jaicf.template.scenario
 
 import com.justai.jaicf.model.scenario.Scenario
 
-object MainScenario: Scenario() {
+object MainScenario : Scenario() {
 
     init {
+        state("Start") {
+            globalActivators {
+                regex("/start")
+            }
+            action {
+                reactions.say("So let's begin!")
+            }
+        }
         state("Hello") {
             activators {
-                intent("Привет")
+                intent("Hello")
             }
 
             action {

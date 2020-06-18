@@ -1,10 +1,12 @@
-package com.justai.jaicf.template.connectors
+package com.justai.jaicf.template.connections
 
+import com.justai.jaicf.channel.googleactions.ActionsFulfillment
 import com.justai.jaicf.channel.http.httpBotRouting
 import com.justai.jaicf.channel.jaicp.JaicpWebhookConnector
 import com.justai.jaicf.channel.jaicp.channels.ChatApiChannel
 import com.justai.jaicf.channel.jaicp.channels.ChatWidgetChannel
 import com.justai.jaicf.channel.jaicp.channels.TelephonyChannel
+import com.justai.jaicf.channel.telegram.TelegramChannel
 import com.justai.jaicf.template.accessToken
 import com.justai.jaicf.template.templateBot
 import io.ktor.routing.routing
@@ -18,7 +20,13 @@ fun main() {
                 "/" to JaicpWebhookConnector(
                     templateBot,
                     accessToken,
-                    channels = listOf(ChatApiChannel, ChatWidgetChannel, TelephonyChannel)
+                    channels = listOf(
+                        ChatApiChannel,
+                        ChatWidgetChannel,
+                        TelephonyChannel,
+                        TelegramChannel,
+                        ActionsFulfillment.ActionsFulfillmentSDK
+                    )
                 )
             )
         }
