@@ -8,8 +8,10 @@ You can use this template locally on your PC or deploy it on Heroku server.
 
 ### Run locally
 
-To run this project locally just create a new project from source codes in IntelliJ IDEA and run either `PollingConnection.kt`, or `WebhookConnection.kt`.
-Using PollingConnection does not require exposed HTTP URL.
+To run this project locally: 
+1. Create a new project from source codes in IntelliJ IDEA
+2. Paste your API Token to `src/main/conf/jaicp.properties`
+2. Run either `PollingConnection.kt`, or `WebhookConnection.kt`. Using PollingConnection does not require exposed HTTP URL.
 
 #### Obtain global URL for WebhookConnection 
 

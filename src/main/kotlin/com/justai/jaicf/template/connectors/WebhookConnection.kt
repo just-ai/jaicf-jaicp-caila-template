@@ -3,6 +3,8 @@ package com.justai.jaicf.template.connectors
 import com.justai.jaicf.channel.http.httpBotRouting
 import com.justai.jaicf.channel.jaicp.JaicpWebhookConnector
 import com.justai.jaicf.channel.jaicp.channels.ChatApiChannel
+import com.justai.jaicf.channel.jaicp.channels.ChatWidgetChannel
+import com.justai.jaicf.channel.jaicp.channels.TelephonyChannel
 import com.justai.jaicf.template.accessToken
 import com.justai.jaicf.template.templateBot
 import io.ktor.routing.routing
@@ -16,7 +18,7 @@ fun main() {
                 "/" to JaicpWebhookConnector(
                     templateBot,
                     accessToken,
-                    channels = listOf(ChatApiChannel)
+                    channels = listOf(ChatApiChannel, ChatWidgetChannel, TelephonyChannel)
                 )
             )
         }
