@@ -50,7 +50,7 @@ Run a terminal (or console) on your machine and type
 heroku login
 heroku git:clone -a <your Heroku application name>
 cd <your Heroku application name>
-git remote add origin https://github.com/just-ai/jaicf-template
+git remote add origin https://github.com/just-ai/jaicf-jaicp-caila-template
 git pull origin master
 ```
 

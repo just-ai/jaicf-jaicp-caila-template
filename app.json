@@ -1,7 +1,7 @@
 {
   "name": "Start on Heroku: JAICF",
   "description": "A barebones JAICF Google Assistant action that runs on Heroku.",
-  "repository": "https://github.com/just-ai/jaicf-template",
+  "repository": "https://github.com/Denire/jaicf-jaicp-caila-template",
   "logo": "https://framework.just-ai.com/images/favicons/mstile-150x150.png",
   "image": "heroku/java",
   "addons": ["mongolab:sandbox"]

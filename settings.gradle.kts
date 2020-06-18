@@ -1,2 +1,2 @@
-rootProject.name = "jaicf-caila-template"
+rootProject.name = "jaicf-jaicp-caila-template"
 
