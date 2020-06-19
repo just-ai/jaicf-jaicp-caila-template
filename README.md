@@ -40,7 +40,7 @@ Just click on the button below to deploy this template on Heroku server.
 
 ### Configuring CAILA in Heroku
 There are two ways how to set JAICP Access Token to heroku:
-1. Set as environmental variable in web dashboard, as shown [here](https://devcenter.heroku.com/articles/config-vars#managing-config-vars).
+1. Set as environmental variable `JAICP_ACCESS_TOKEN` in web dashboard, as shown [here](https://devcenter.heroku.com/articles/config-vars#managing-config-vars).
 2. Set property in `src/main/conf/jaicp.properties`, and upload changes to heroku.
 After token was set, you need to restart application in Heroku.
 
