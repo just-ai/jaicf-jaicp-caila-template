@@ -30,7 +30,7 @@ private val cailaNLUSettings = CailaNLUSettings(
 
 val templateBot = BotEngine(
     model = MainScenario.model,
-    contextManager = contextManager,
+    defaultContextManager = contextManager,
     activators = arrayOf(
         CailaIntentActivator.Factory(cailaNLUSettings),
         RegexActivator,
