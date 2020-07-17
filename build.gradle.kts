@@ -7,7 +7,7 @@ plugins {
 group = "com.justai.jaicf"
 version = "1.0.0"
 
-val jaicf = "0.4.2"
+val jaicf = "0.5.2"
 val slf4j = "1.7.30"
 val ktor = "1.3.1"
 
