@@ -4,5 +4,10 @@
   "repository": "https://github.com/Denire/jaicf-jaicp-caila-template",
   "logo": "https://framework.just-ai.com/images/favicons/mstile-150x150.png",
   "image": "heroku/java",
-  "addons": ["mongolab:sandbox"]
+  "addons": ["mongolab:sandbox"],
+  "env": {
+    "JAICP_API_TOKEN": {
+      "description": "Your JAICP project's API token"
+    }
+  }
 }

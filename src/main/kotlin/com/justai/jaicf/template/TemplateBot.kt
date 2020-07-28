@@ -10,7 +10,6 @@ import com.justai.jaicf.context.manager.mongo.MongoBotContextManager
 import com.justai.jaicf.template.scenario.MainScenario
 import com.mongodb.MongoClient
 import com.mongodb.MongoClientURI
-import java.io.File
 import java.util.*
 
 private val contextManager = System.getenv("MONGODB_URI")?.let { url ->
@@ -19,9 +18,10 @@ private val contextManager = System.getenv("MONGODB_URI")?.let { url ->
     MongoBotContextManager(client.getDatabase(uri.database!!).getCollection("contexts"))
 } ?: InMemoryBotContextManager
 
-val accessToken: String = System.getenv("JAICP_ACCESS_TOKEN") ?: Properties().apply {
-    load(File("./src/main/conf/jaicp.properties").inputStream())
-}.getProperty("apiToken")
+val accessToken: String = System.getenv("JAICP_API_TOKEN") ?: Properties().run {
+    load(CailaNLUSettings::class.java.getResourceAsStream("/jaicp.properties"))
+    getProperty("apiToken")
+}
 
 private val cailaNLUSettings = CailaNLUSettings(
     accessToken = accessToken,
