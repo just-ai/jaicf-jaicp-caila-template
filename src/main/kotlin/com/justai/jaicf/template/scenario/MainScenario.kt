@@ -13,6 +13,7 @@ object MainScenario : Scenario() {
                 reactions.say("So let's begin!")
             }
         }
+
         state("Hello") {
             activators {
                 intent("Hello")
@@ -22,6 +23,7 @@ object MainScenario : Scenario() {
                 reactions.say("Hi there!")
             }
         }
+
         state("Bye") {
             activators {
                 intent("Bye")
@@ -32,14 +34,8 @@ object MainScenario : Scenario() {
             }
         }
 
-        state("fallback", noContext = true) {
-            activators {
-                catchAll()
-            }
-
-            action {
-                reactions.say("I have nothing to say yet...")
-            }
+        fallback {
+            reactions.say("I have nothing to say yet...")
         }
     }
 }
