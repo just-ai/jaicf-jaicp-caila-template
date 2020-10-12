@@ -1,104 +1,127 @@
-[
-  {
-    "id": 6712,
-    "path": "/Bye",
-    "enabled": true,
-    "shared": false,
-    "phrases": [
-      {
-        "text": "goodbye"
-      },
-      {
-        "text": "bye"
-      },
-      {
-        "text": "see you"
-      }
-    ],
-    "patterns": []
+{
+  "project": {
+    "id": "jaicf-jaicp-caila-template",
+    "name": "jaicf-jaicp-caila-template",
+    "folder": "/"
   },
-  {
-    "id": 6711,
-    "path": "/Hello",
-    "enabled": true,
-    "shared": false,
-    "phrases": [
-      {
-        "text": "hi"
-      },
-      {
-        "text": "hello"
-      },
-      {
-        "text": "welcome"
-      }
-    ],
-    "patterns": []
+  "settings": {
+    "language": "en",
+    "spellingCorrection": false,
+    "classificationAlgorithm": "sts",
+    "timezone": "UTC",
+    "shared": false
   },
-  {
-    "id": 6731,
-    "path": "/Smalltalk",
-    "enabled": true,
-    "shared": false,
-    "phrases": [],
-    "patterns": []
-  },
-  {
-    "id": 6734,
-    "path": "/Smalltalk/Help",
-    "description": "",
-    "answer": "I'm a templated bot and can't do useful things yet...",
-    "enabled": true,
-    "shared": false,
-    "phrases": [
-      {
-        "text": "help"
-      },
-      {
-        "text": "what can you do"
-      },
-      {
-        "text": "your functions"
-      },
-      {
-        "text": "your possibilities"
-      },
-      {
-        "text": "tell me about you"
-      }
-    ],
-    "patterns": []
-  },
-  {
-    "id": 6732,
-    "path": "/Smalltalk/HowAreYou",
-    "answer": "I'm fine! Thank you!",
-    "enabled": true,
-    "shared": false,
-    "phrases": [
-      {
-        "text": "how are you"
-      }
-    ],
-    "patterns": []
-  },
-  {
-    "id": 6733,
-    "path": "/Smalltalk/WhatIsYourName",
-    "answer": "I don't have a name yet, I'm just a bot",
-    "enabled": true,
-    "shared": false,
-    "phrases": [
-      {
-        "text": "what is your name"
-      },
-      {
-        "text": "how to name you"
-      },
-      {
-        "text": "say me your name"
-      }
-    ],
-    "patterns": []
-  }
-]
+  "intents": [
+    {
+      "id": 6760,
+      "path": "/Bye",
+      "enabled": true,
+      "shared": false,
+      "phrases": [
+        {
+          "text": "goodbye"
+        },
+        {
+          "text": "bye"
+        },
+        {
+          "text": "see you"
+        }
+      ],
+      "patterns": []
+    },
+    {
+      "id": 6761,
+      "path": "/Hello",
+      "enabled": true,
+      "shared": false,
+      "phrases": [
+        {
+          "text": "hi"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "welcome"
+        }
+      ],
+      "patterns": []
+    },
+    {
+      "id": 6762,
+      "path": "/Smalltalk",
+      "enabled": true,
+      "shared": false,
+      "phrases": [],
+      "patterns": []
+    },
+    {
+      "id": 6763,
+      "path": "/Smalltalk/Help",
+      "description": "",
+      "answer": "I'm a templated bot and can't do useful things yet...",
+      "enabled": true,
+      "shared": false,
+      "phrases": [
+        {
+          "text": "help"
+        },
+        {
+          "text": "what can you do"
+        },
+        {
+          "text": "your functions"
+        },
+        {
+          "text": "your possibilities"
+        },
+        {
+          "text": "tell me about you"
+        }
+      ],
+      "patterns": []
+    },
+    {
+      "id": 6764,
+      "path": "/Smalltalk/HowAreYou",
+      "answer": "I'm fine! Thank you!",
+      "enabled": true,
+      "shared": false,
+      "phrases": [
+        {
+          "text": "how are you"
+        }
+      ],
+      "patterns": []
+    },
+    {
+      "id": 6765,
+      "path": "/Smalltalk/WhatIsYourName",
+      "answer": "I don't have a name yet, I'm just a bot",
+      "enabled": true,
+      "shared": false,
+      "phrases": [
+        {
+          "text": "what is your name"
+        },
+        {
+          "text": "how to name you"
+        },
+        {
+          "text": "say me your name"
+        }
+      ],
+      "patterns": []
+    }
+  ],
+  "entities": [],
+  "enabledSystemEntities": [
+    "duckling.number",
+    "duckling.time",
+    "duckling.duration",
+    "duckling.phone-number",
+    "duckling.email",
+    "duckling.url"
+  ]
+}
