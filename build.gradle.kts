@@ -1,6 +1,6 @@
 plugins {
     application
-    kotlin("jvm") version "1.3.61"
+    kotlin("jvm") version "1.3.71"
     id("com.github.johnrengelman.shadow") version "5.0.0"
 }
 
@@ -29,7 +29,6 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:$logback")
 
     implementation("com.justai.jaicf:core:$jaicf")
-    implementation("com.justai.jaicf:mongo:$jaicf")
     implementation("com.justai.jaicf:jaicp:$jaicf")
     implementation("com.justai.jaicf:caila:$jaicf")
 
