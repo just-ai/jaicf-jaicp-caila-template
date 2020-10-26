@@ -1,20 +1,30 @@
 plugins {
     application
     kotlin("jvm") version "1.3.71"
-    id("com.github.johnrengelman.shadow") version "5.0.0"
 }
 
 group = "com.justai.jaicf"
 version = "1.0.0"
 
-val jaicf = "0.7.1"
+val jaicf = "0.8.0"
 val logback = "1.2.3"
 val ktor = "1.3.1"
 
 // Main class to run application on heroku. Either PollingConnectionKt, or WebhookConnectionKt
 application {
-    mainClassName = "com.justai.jaicf.template.connections.WebhookConnectionKt"
+    mainClassName = "com.justai.jaicf.template.connections.JaicpServerKt"
 }
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath("com.justai.jaicf:jaicp-build-plugin:0.1.0")
+    }
+}
+apply(plugin = "com.justai.jaicf.jaicp-build-plugin")
+
 
 repositories {
     mavenLocal()
@@ -56,4 +66,8 @@ tasks.withType<Jar> {
 
 tasks.create("stage") {
     dependsOn("shadowJar")
+}
+
+tasks.withType<com.justai.jaicf.plugins.jaicp.build.JaicpBuild> {
+    mainClassName.set(application.mainClassName)
 }
