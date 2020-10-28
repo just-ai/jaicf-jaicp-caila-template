@@ -1,6 +1,7 @@
 plugins {
     application
     kotlin("jvm") version "1.3.71"
+    id("com.justai.jaicf.jaicp-build-plugin") version "0.1.1"
 }
 
 group = "com.justai.jaicf"
@@ -10,21 +11,10 @@ val jaicf = "0.8.0"
 val logback = "1.2.3"
 val ktor = "1.3.1"
 
-// Main class to run application on heroku. Either PollingConnectionKt, or WebhookConnectionKt
+// Main class to run application on heroku. Either JaicpPollerKt, or JaicpServerKt. Will propagate to .jar main class.
 application {
     mainClassName = "com.justai.jaicf.template.connections.JaicpServerKt"
 }
-
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath("com.justai.jaicf:jaicp-build-plugin:0.1.0")
-    }
-}
-apply(plugin = "com.justai.jaicf.jaicp-build-plugin")
-
 
 repositories {
     mavenLocal()
@@ -51,16 +41,6 @@ tasks {
     }
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
-    }
-}
-
-tasks.withType<Jar> {
-    manifest {
-        attributes(
-            mapOf(
-                "Main-Class" to application.mainClassName
-            )
-        )
     }
 }
 
