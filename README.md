@@ -9,7 +9,7 @@ Please refer to the detailed [Quick Start](https://github.com/just-ai/jaicf-kotl
 # Deploy to [JAICP Cloud](https://github.com/just-ai/jaicf-kotlin/wiki/JAICP-Cloud)
 JAICP Cloud provides one-click deploy for your bot, just click on the button below
 
-[<img src="https://248305.selcdn.ru/resources/deploy_to_jaicp.png" height="32" width="146"/>](https://app.jaicp.com/deploy)
+[![Deploy](https://just-ai.com/img/deploy-to-jaicp.svg)](https://app.jaicp.com/deploy)
 
 
 # Deploy to Heroku
