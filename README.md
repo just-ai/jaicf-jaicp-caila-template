@@ -1,10 +1,16 @@
 # JAICF Caila Bot template
 
-Here is a ready to use [JAICF](https://github.com/just-ai/jaicf-kotlin) bot template that can be ran locally or deployed to Heroku server.
+Here is a ready to use [JAICF](https://github.com/just-ai/jaicf-kotlin) bot template that can be ran locally or deployed to JAICP Cloud or Heroku server.
 
 # How to use
 
 Please refer to the detailed [Quick Start](https://github.com/just-ai/jaicf-kotlin/wiki/Quick-Start) that shows how to use this template with JAICP and CAILA NLU services.
+
+# Deploy to [JAICP Cloud](https://github.com/just-ai/jaicf-kotlin/wiki/JAICP-Cloud)
+JAICP Cloud provides one-click deploy for your bot, just click on the button below
+
+[<img src="https://248305.selcdn.ru/resources/deploy_to_jaicp.png" height="32" width="146"/>](https://app.jaicp.com/deploy)
+
 
 # Deploy to Heroku
 
