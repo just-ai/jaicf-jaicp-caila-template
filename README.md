@@ -4,15 +4,17 @@ Here is a ready to use [JAICF](https://github.com/just-ai/jaicf-kotlin) bot temp
 
 # How to use
 
-Please refer to the detailed [Quick Start](https://github.com/just-ai/jaicf-kotlin/wiki/Quick-Start) that shows how to use this template with JAICP and CAILA NLU services.
+Please refer to the detailed [Quick Start](https://github.com/just-ai/jaicf-kotlin/wiki/Quick-Start) that shows how to use this template with [JAICP](https://github.com/just-ai/jaicf-kotlin/tree/master/channels/jaicp) and [CAILA NLU](https://github.com/just-ai/jaicf-kotlin/tree/master/activators/caila) services.
 
 # Deploy to [JAICP Cloud](https://github.com/just-ai/jaicf-kotlin/wiki/JAICP-Cloud)
+
 JAICP Cloud provides one-click deploy for your bot, just click on the button below
 
 [![Deploy](https://just-ai.com/img/deploy-to-jaicp.svg)](https://app.jaicp.com/deploy)
 
+After deployment just add one or more channels on the _Channels_ page accordingly to your `JaicpServer.kt` configuration.
 
-# Deploy to Heroku
+# Deploy to [Heroku](https://github.com/just-ai/jaicf-kotlin/wiki/Heroku)
 
 If you would like to deploy this project to the Heroku cloud, just click on the button below
 
