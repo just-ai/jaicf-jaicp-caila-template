@@ -46,10 +46,8 @@ object MainScenario : Scenario() {
                 anyIntent()
             }
 
-            action {
-                activator.caila?.topIntent?.answer?.let {
-                    reactions.say(it)
-                }
+            action(caila) {
+                activator.topIntent.answer?.let { reactions.say(it) } ?: reactions.go("/fallback")
             }
         }
 
