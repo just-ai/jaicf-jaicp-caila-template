@@ -1,61 +1,58 @@
 package com.justai.jaicf.template.scenario
 
 import com.justai.jaicf.activator.caila.caila
-import com.justai.jaicf.model.scenario.Scenario
+import com.justai.jaicf.builder.Scenario
 
-object MainScenario : Scenario() {
-
-    init {
-        state("start") {
-            activators {
-                regex("/start")
-                intent("Hello")
-            }
-            action {
-                reactions.run {
-                    image("https://media.giphy.com/media/ICOgUNjpvO0PC/source.gif")
-                    sayRandom(
-                        "Hello! How can I help?",
-                        "Hi there! How can I help you?"
-                    )
-                    buttons(
-                        "Help me!",
-                        "How are you?",
-                        "What is your name?"
-                    )
-                }
-            }
+val mainScenario = Scenario {
+    state("start") {
+        activators {
+            regex("/start")
+            intent("Hello")
         }
-
-        state("bye") {
-            activators {
-                intent("Bye")
-            }
-
-            action {
-                reactions.sayRandom(
-                    "See you soon!",
-                    "Bye-bye!"
+        action {
+            reactions.run {
+                image("https://media.giphy.com/media/ICOgUNjpvO0PC/source.gif")
+                sayRandom(
+                    "Hello! How can I help?",
+                    "Hi there! How can I help you?"
                 )
-                reactions.image("https://media.giphy.com/media/EE185t7OeMbTy/source.gif")
+                buttons(
+                    "Help me!",
+                    "How are you?",
+                    "What is your name?"
+                )
             }
         }
+    }
 
-        state("smalltalk", noContext = true) {
-            activators {
-                anyIntent()
-            }
-
-            action(caila) {
-                activator.topIntent.answer?.let { reactions.say(it) } ?: reactions.go("/fallback")
-            }
+    state("bye") {
+        activators {
+            intent("Bye")
         }
 
-        fallback {
+        action {
             reactions.sayRandom(
-                "Sorry, I didn't get that...",
-                "Sorry, could you repeat please?"
+                "See you soon!",
+                "Bye-bye!"
             )
+            reactions.image("https://media.giphy.com/media/EE185t7OeMbTy/source.gif")
         }
+    }
+
+    state("smalltalk", noContext = true) {
+        activators {
+            anyIntent()
+        }
+
+        action(caila) {
+            activator.topIntent.answer?.let { reactions.say(it) } ?: reactions.go("/fallback")
+        }
+    }
+
+    fallback {
+        reactions.sayRandom(
+            "Sorry, I didn't get that...",
+            "Sorry, could you repeat please?"
+        )
     }
 }
