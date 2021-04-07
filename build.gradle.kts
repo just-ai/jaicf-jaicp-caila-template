@@ -1,6 +1,6 @@
 plugins {
     application
-    kotlin("jvm") version "1.4.10"
+    kotlin("jvm") version "1.4.21"
     id("com.justai.jaicf.jaicp-build-plugin") version "0.1.1"
 }
 
