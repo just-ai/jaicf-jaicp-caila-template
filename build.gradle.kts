@@ -7,7 +7,7 @@ plugins {
 group = "com.justai.jaicf"
 version = "1.0.0"
 
-val jaicf = "0.13.0"
+val jaicf = "1.0.0"
 val logback = "1.2.3"
 
 // Main class to run application on heroku. Either JaicpPollerKt, or JaicpServerKt. Will propagate to .jar main class.
@@ -27,9 +27,9 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:$logback")
 
-    implementation("com.justai.jaicf:core:$jaicf")
-    implementation("com.justai.jaicf:jaicp:$jaicf")
-    implementation("com.justai.jaicf:caila:$jaicf")
+    implementation("com.just-ai.jaicf:core:$jaicf")
+    implementation("com.just-ai.jaicf:jaicp:$jaicf")
+    implementation("com.just-ai.jaicf:caila:$jaicf")
 }
 
 tasks {
