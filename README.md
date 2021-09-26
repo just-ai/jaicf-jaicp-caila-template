@@ -4,9 +4,9 @@ Here is a ready to use [JAICF](https://github.com/just-ai/jaicf-kotlin) bot temp
 
 # How to use
 
-Please refer to the detailed [Quick Start](https://github.com/just-ai/jaicf-kotlin/wiki/Quick-Start) that shows how to use this template with [JAICP](https://github.com/just-ai/jaicf-kotlin/tree/master/channels/jaicp) and [CAILA NLU](https://github.com/just-ai/jaicf-kotlin/tree/master/activators/caila) services.
+Please refer to the detailed [Quick Start](https://help.jaicf.com/Quick-Start) that shows how to use this template with [JAICP](https://help.jaicf.com/JAICP) and [CAILA NLU](https://help.jaicf.com/Caila) services.
 
-# Deploy to [Heroku](https://github.com/just-ai/jaicf-kotlin/wiki/Heroku)
+# Deploy to [Heroku](https://help.jaicf.com/Heroku)
 
 If you would like to deploy this project to the Heroku cloud, just click on the button below
 
