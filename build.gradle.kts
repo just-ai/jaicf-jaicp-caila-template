@@ -39,6 +39,9 @@ tasks {
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
     }
+    shadowJar {
+        archiveFileName.set("app.jar")
+    }
 }
 
 tasks.create("stage") {
