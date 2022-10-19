@@ -1,9 +1,38 @@
 package com.justai.jaicf.template.scenario
 
-import com.justai.jaicf.activator.caila.caila
 import com.justai.jaicf.builder.Scenario
+import com.justai.jaicf.template.util.questions
 
 val mainScenario = Scenario {
+
+    state("test") {
+        val q = questions.first()
+        activators {
+            regex("/test")
+        }
+        action {
+            reactions.run {
+                say(q.formatted())
+                buttons("1", "2", "3", "4")
+            }
+
+        }
+
+
+        state("answer") {
+            activators {
+                regex("[1-${q.answers.size}]")
+            }
+            action {
+                val ans = request.input.toInt()
+                reactions.run {
+                    say("${request.input} ${if (ans == q.correctAnswer) " correct " else " incorrect "}")
+                }
+
+            }
+        }
+    }
+
     state("start") {
         activators {
             regex("/start")
@@ -17,35 +46,9 @@ val mainScenario = Scenario {
                     "Hi there! How can I help you?"
                 )
                 buttons(
-                    "Help me!",
-                    "How are you?",
-                    "What is your name?"
+                    "/test"
                 )
             }
-        }
-    }
-
-    state("bye") {
-        activators {
-            intent("Bye")
-        }
-
-        action {
-            reactions.sayRandom(
-                "See you soon!",
-                "Bye-bye!"
-            )
-            reactions.image("https://media.giphy.com/media/EE185t7OeMbTy/source.gif")
-        }
-    }
-
-    state("smalltalk", noContext = true) {
-        activators {
-            anyIntent()
-        }
-
-        action(caila) {
-            activator.topIntent.answer?.let { reactions.say(it) } ?: reactions.go("/fallback")
         }
     }
 

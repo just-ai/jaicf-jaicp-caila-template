@@ -1,6 +1,6 @@
 package com.justai.jaicf.template.util
 
-fun getQuestions(): List<Question> = listOf<Question>(
+val questions: List<Question> = listOf(
     Question("What is c?", listOf("a", "b", "c", "d"), 3)
 )
 
