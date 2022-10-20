@@ -9,6 +9,7 @@ version = "1.0.0"
 
 val jaicf = "1.2.2"
 val logback = "1.2.3"
+val jaicfVersion = "1.2.4"
 
 // Main class to run application on heroku. Either JaicpPollerKt, or JaicpServerKt. Will propagate to .jar main class.
 application {
@@ -30,6 +31,7 @@ dependencies {
     implementation("com.just-ai.jaicf:core:$jaicf")
     implementation("com.just-ai.jaicf:jaicp:$jaicf")
     implementation("com.just-ai.jaicf:caila:$jaicf")
+    implementation("com.just-ai.jaicf:telegram:$jaicfVersion")
 }
 
 tasks {

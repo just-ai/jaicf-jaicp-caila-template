@@ -1,6 +1,7 @@
 package com.justai.jaicf.template.scenario
 
 import com.justai.jaicf.builder.Scenario
+import com.justai.jaicf.channel.telegram.telegram
 import com.justai.jaicf.template.util.questions
 
 val mainScenario = Scenario {
@@ -12,9 +13,9 @@ val mainScenario = Scenario {
         }
         action {
             reactions.run {
-                say(q.formatted())
-                buttons("1", "2", "3", "4")
+                telegram?.say(q.formatted(), (1..q.answers.size).toList().map { it.toString() })
             }
+
 
         }
 
@@ -25,10 +26,11 @@ val mainScenario = Scenario {
             }
             action {
                 val ans = request.input.toInt()
+                val isCorrect = ans == q.correctAnswer;
                 reactions.run {
-                    say("${request.input} ${if (ans == q.correctAnswer) " correct " else " incorrect "}")
-                }
+                    telegram?.say("answer ${request.input} is ${if (isCorrect) "correct)" else "incorrect("}")
 
+                }
             }
         }
     }
