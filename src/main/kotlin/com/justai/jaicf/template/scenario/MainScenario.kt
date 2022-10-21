@@ -72,7 +72,7 @@ class MainScenario(
                 val score = userDataService.getScore(username)
 
                 reactions.telegram?.say(
-                    "Whew! It seems that you've completed test! Your score is $score/${questions.size}"
+                    "Whew! It seems that you've completed test! Your score is $score/${questions.size}. /new to retry"
                 )
             }
         }
@@ -88,18 +88,18 @@ class MainScenario(
                 reactions.run {
                     val btns = mutableListOf("/new")
                     when (userData.lastAnswered) {
-                        0 -> say("It looks like you are new! Type /new to begin test")
+                        0 -> say("It looks like you are new! /new - Begin test")
                         questions.size ->
                             say(
                                 "You've already completed test. " +
-                                        "Your result is ${userData.score}. " +
-                                        "Type /new to begin new test"
+                                        "Your result is ${userData.score}/${questions.size}. " +
+                                        "/new - Begin new test"
                             )
                         else -> {
                             say(
                                 "It seems that you've already started test. " +
-                                        "If you want to proceed test type - /continue. " +
-                                        "If you want to begin new test - type /new"
+                                        "/continue - Proceed test. " +
+                                        "/new - Begin new test"
                             )
                             btns.add("/continue")
                         }
