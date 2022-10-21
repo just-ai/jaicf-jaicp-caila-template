@@ -4,6 +4,6 @@ import org.springframework.boot.runApplication
 
 fun main(args: Array<String>) {
     System.setProperty("spring.config.location",
-        "classpath:/application.yml,classpath:/dev.application.yml,optional:classpath:/local.application.yml")
+        "classpath:/application.properties,classpath:/dev.application.properties")
     runApplication<Application>(*args)
 }

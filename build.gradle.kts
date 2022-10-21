@@ -2,7 +2,6 @@ plugins {
     application
     kotlin("jvm") version "1.4.21"
     kotlin("plugin.spring") version "1.4.21"
-    id("com.justai.jaicf.jaicp-build-plugin") version "0.1.1"
 
     id("org.springframework.boot") version "2.4.4"
     id("io.spring.dependency-management") version "1.0.8.RELEASE"
@@ -52,8 +51,4 @@ tasks {
 
 tasks.create("stage") {
     dependsOn("bootJar")
-}
-
-tasks.withType<com.justai.jaicf.plugins.jaicp.build.JaicpBuild> {
-    mainClassName.set(application.mainClassName)
 }
