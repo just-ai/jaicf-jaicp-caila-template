@@ -1,6 +1,9 @@
 package com.justai.jaicf.template.util
 
 val questions: List<Question> = listOf(
+    Question("What is c?", listOf("a", "b", "c", "d"), 3),
+    Question("What is c?", listOf("a", "b", "c", "d"), 3),
+    Question("What is c?", listOf("a", "b", "c", "d"), 3),
     Question("What is c?", listOf("a", "b", "c", "d"), 3)
 )
 

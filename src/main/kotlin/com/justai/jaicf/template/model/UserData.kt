@@ -13,8 +13,8 @@ class UserData(
     val name: String = "",
 
     @Column(name = "last_answered")
-    val lastAnswered: Int = 0,
+    var lastAnswered: Int = 0,
 
     @Column(name = "score")
-    val score: Int = 0
+    var score: Int = 0
 )
