@@ -3,11 +3,14 @@ package com.justai.jaicf.template.scenario
 import com.justai.jaicf.builder.createModel
 import com.justai.jaicf.channel.telegram.telegram
 import com.justai.jaicf.model.scenario.Scenario
+import com.justai.jaicf.template.service.UserDataService
 import com.justai.jaicf.template.util.questions
 import org.springframework.stereotype.Component
 
 @Component
-class MainScenario : Scenario {
+class MainScenario(
+    userDataService: UserDataService
+) : Scenario {
 
     override val model = createModel {
         state("test") {
@@ -19,6 +22,7 @@ class MainScenario : Scenario {
                 reactions.run {
                     telegram?.say(q.formatted(), (1..q.answers.size).toList().map { it.toString() })
                 }
+                println(userDataService.getAll())
             }
 
 

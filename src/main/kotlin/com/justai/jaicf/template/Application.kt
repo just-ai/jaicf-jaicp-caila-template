@@ -1,13 +1,13 @@
 package com.justai.jaicf.template
 
 import com.justai.jaicf.activator.caila.CailaNLUSettings
-import org.springframework.boot.SpringBootConfiguration
+import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.runApplication
 import java.util.*
 
-@SpringBootConfiguration
+@SpringBootApplication
 @EnableConfigurationProperties
 @ConfigurationPropertiesScan("com.justai.jaicf.template.config")
 class Application
