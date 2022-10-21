@@ -14,11 +14,6 @@ version = "1.0.0"
 val jaicf = "1.2.4"
 val logback = "1.2.3"
 
-// Main class to run application on heroku. Either JaicpPollerKt, or JaicpServerKt. Will propagate to .jar main class.
-application {
-    mainClassName = "com.justai.jaicf.template.connections.JaicpServerKt"
-}
-
 repositories {
     mavenLocal()
     mavenCentral()
@@ -51,7 +46,7 @@ tasks {
     }
     bootJar {
         archiveFileName.set("app.jar")
-        mainClass.set("com.justai.jaicf.spring.ApplicationKt")
+        mainClass.set("com.justai.jaicf.template.ApplicationKt")
     }
 }
 
